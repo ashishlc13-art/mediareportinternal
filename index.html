@@ -3,296 +3,326 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D GO Project Report - Dimag Ghochne Manche</title>
+    <title>D GO | Dimag Ghochne Manche - Project Report</title>
     <style>
-        /* BRAND COLORS FROM LOGO */
+        /* OFFICIAL D GO COLOR PALETTE */
         :root {
             --dgo-purple: #9c4cf4;
             --dgo-pink: #eb4bb4;
             --dgo-red: #ff3d3d;
-            --dgo-gradient: linear-gradient(90deg, #9c4cf4, #eb4bb4, #ff3d3d);
-            --bg-light: #f4f7f6;
-            --text-dark: #2d3436;
+            --dgo-gradient: linear-gradient(135deg, #9c4cf4, #eb4bb4, #ff3d3d);
+            --bg-canvas: #f3f4f6;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #cbd5e0;
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg-canvas);
             color: var(--text-dark);
             margin: 0;
-            padding: 40px 20px;
+            padding: 50px 20px;
             line-height: 1.6;
         }
 
-        .report-paper {
-            max-width: 950px;
+        .report-card {
+            max-width: 1000px;
             margin: 0 auto;
-            background: white;
-            padding: 60px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-            border-radius: 4px;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border-top: 10px solid var(--dgo-purple);
         }
 
         /* HEADER SECTION */
         header {
+            padding: 60px 60px 40px;
             text-align: center;
-            margin-bottom: 50px;
+            border-bottom: 1px solid #f1f5f9;
         }
 
-        .main-logo {
-            width: 320px; /* Large professional header logo */
+        .logo-header {
+            width: 320px;
+            height: auto;
             margin-bottom: 30px;
         }
 
-        .project-meta-box {
-            display: flex;
-            justify-content: space-between;
-            border-top: 2px solid #eee;
-            border-bottom: 2px solid #eee;
-            padding: 20px 0;
+        .meta-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: left;
+            background: #fafafa;
+            padding: 25px;
+            border-radius: 12px;
             margin-top: 20px;
-            font-size: 14px;
-            color: #636e72;
         }
 
-        .meta-item strong {
-            color: var(--dgo-purple);
-            display: block;
-            text-transform: uppercase;
+        .meta-box h5 {
+            margin: 0;
             font-size: 11px;
+            text-transform: uppercase;
             letter-spacing: 1px;
+            color: var(--dgo-pink);
         }
 
-        /* SECTION TITLES */
+        .meta-box p {
+            margin: 5px 0 0;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        /* CONTENT STYLING */
+        .content-body {
+            padding: 40px 60px;
+        }
+
         h2 {
-            font-size: 20px;
-            color: var(--dgo-pink);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            border-left: 6px solid var(--dgo-red);
-            padding-left: 15px;
+            font-size: 24px;
+            color: var(--dgo-purple);
             margin-top: 40px;
             margin-bottom: 20px;
+            display: flex;
+            align-items: center;
         }
 
-        /* FINANCIAL TABLE */
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 2px;
+            background: #f1f5f9;
+            margin-left: 20px;
+        }
+
+        /* TABLE STYLING */
+        .table-wrapper {
+            margin: 30px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 30px 0;
-            font-size: 15px;
+            font-size: 14px;
         }
 
         th {
             background: var(--dgo-purple);
             color: white;
-            padding: 15px;
+            padding: 18px;
             text-align: left;
         }
 
         td {
-            padding: 15px;
-            border-bottom: 1px solid #eee;
+            padding: 15px 18px;
+            border-bottom: 1px solid #f1f5f9;
         }
 
-        .cost-col {
-            color: #27ae60;
-            font-weight: bold;
-        }
+        .val-npr { font-weight: 600; color: #475569; }
+        .cost-zero { font-weight: 800; color: #10b981; }
 
         .total-row {
-            background-color: #fff9fb;
-            font-weight: bold;
+            background: #fff5f7;
             font-size: 18px;
+            font-weight: 800;
             color: var(--dgo-red);
         }
 
-        /* NEWS TABS GRID (Small Squares) */
-        .news-grid {
+        /* SQUARE TABS GRID */
+        .tabs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
             gap: 15px;
-            margin-top: 25px;
+            margin-top: 30px;
         }
 
         .news-tab {
             aspect-ratio: 1 / 1;
+            background: #ffffff;
+            border: 2px solid #f1f5f9;
+            border-radius: 12px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 10px;
-            background: var(--bg-light);
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            padding: 15px;
             text-decoration: none;
             color: var(--text-dark);
-            font-size: 12px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
         }
 
         .news-tab:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             background: var(--dgo-gradient);
             color: white;
             border-color: transparent;
-            box-shadow: 0 8px 15px rgba(156, 76, 244, 0.3);
+            box-shadow: 0 20px 25px -5px rgba(156, 76, 244, 0.2);
         }
 
-        /* PILLARS FOR STRATEGY */
-        .pillar-row {
-            display: flex;
+        .news-tab .icon { font-size: 24px; margin-bottom: 10px; }
+        .news-tab .name { font-size: 11px; font-weight: 700; text-transform: uppercase; }
+
+        /* PILLARS */
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            margin-top: 20px;
+            margin-bottom: 40px;
         }
 
-        .pillar-card {
-            flex: 1;
-            background: #fcfcfc;
-            padding: 20px;
-            border-top: 4px solid var(--dgo-purple);
-            border-radius: 4px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        .pillar {
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid var(--dgo-pink);
         }
 
-        .pillar-card h4 {
-            margin-top: 0;
-            color: var(--dgo-purple);
+        .pillar h4 { margin: 0 0 10px; color: var(--dgo-purple); }
+
+        footer {
+            padding: 40px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+            background: #fafafa;
         }
 
-        @media print {
-            body { background: white; padding: 0; }
-            .report-paper { box-shadow: none; border: none; width: 100%; }
-            .news-tab { border: 1px solid #ccc; page-break-inside: avoid; }
+        @media (max-width: 768px) {
+            .content-body { padding: 30px; }
+            .pillar-grid { grid-template-columns: 1fr; }
+            .meta-container { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
 <body>
 
-<div class="report-paper">
+<div class="report-card">
     <header>
-        <!-- Replace 'logo.png' with your actual logo file name -->
-        <img src="logo.png" alt="D GO LOGO" class="main-logo">
-        <div class="project-meta-box">
-            <div class="meta-item"><strong>Project Name</strong>Dimag Ghochne Manche (DGM)</div>
-            <div class="meta-item"><strong>Lead</strong>Aashish Lamichhane</div>
-            <div class="meta-item"><strong>Partners</strong>D Go x Ujwal Thapa Foundation</div>
-            <div class="meta-item"><strong>Date</strong>April 2026</div>
+        <!-- This pulls your logo.png from your GitHub repo folder -->
+        <img src="logo.png" alt="D GO LOGO" class="logo-header">
+        
+        <div class="meta-container">
+            <div class="meta-box"><h5>Project Title</h5><p>Dimag Ghochne Manche (DGM)</p></div>
+            <div class="meta-box"><h5>Campaign Lead</h5><p>Aashish Lamichhane</p></div>
+            <div class="meta-box"><h5>Partners</h5><p>D Go x Ujwal Thapa Foundation</p></div>
+            <div class="meta-box"><h5>Launch Date</h5><p>April 2026</p></div>
         </div>
     </header>
 
-    <section>
-        <h2>1. Executive Summary</h2>
-        <p>Following the strategic partnership with the <strong>Ujwal Thapa Foundation</strong>, our team led the end-to-end branding, marketing, and distribution of the 1-hour and 50-minute documentary <em>Dimag Ghochne Manche</em>. This project served as the Soft Launch for D Go’s new Logo and Name, positioning the platform as a socially responsible leader in the Nepali OTT space.</p>
-        <p>Through professional coordination, we achieved massive visibility across <strong>16 media outlets with Zero Marketing Spend</strong>, effectively saving the company significant capital while building high brand equity.</p>
-    </section>
+    <div class="content-body">
+        <section>
+            <h2>1. Executive Summary</h2>
+            <p>Following the strategic partnership with the <strong>Ujwal Thapa Foundation</strong>, our team led the branding, marketing, and distribution of the 1-hour 50-minute documentary <em>Dimag Ghochne Manche</em>. This project successfully launched D Go’s new visual identity, positioning us as a socially responsible leader in the Nepali OTT market.</p>
+            <p>We achieved massive visibility across 16 media outlets with <strong>Zero Marketing Spend</strong>, saving the company capital while building significant brand equity.</p>
+        </section>
 
-    <section>
-        <h2>2. Strategic Branding & Creative Execution</h2>
-        <div class="pillar-row">
-            <div class="pillar-card">
-                <h4>Visual Identity</h4>
-                <p>Partnered with BLQ team to produce high-quality social assets introducing the new D Go branding.</p>
+        <section>
+            <h2>2. Strategic Branding Pillars</h2>
+            <div class="pillar-grid">
+                <div class="pillar">
+                    <h4>Visual Identity</h4>
+                    <p>New logo integration across all high-quality social assets and platform UI.</p>
+                </div>
+                <div class="pillar" style="border-left-color: var(--dgo-red);">
+                    <h4>Viral Engagement</h4>
+                    <p>Distributed 5 targeted video segments focusing on "Reality over Pranks."</p>
+                </div>
+                <div class="pillar" style="border-left-color: var(--dgo-purple);">
+                    <h4>Earned PR</h4>
+                    <p>Strategic nationwide press release securing top-tier organic news placements.</p>
+                </div>
             </div>
-            <div class="pillar-card" style="border-top-color: var(--dgo-pink);">
-                <h4>Engagement</h4>
-                <p>Distributed 5 targeted video clips highlighting core messages to drive organic sharing.</p>
+        </section>
+
+        <section>
+            <h2>3. Financial Performance & Value Audit</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Media Portal / Description</th>
+                            <th>Market Value (NPR)</th>
+                            <th>D Go Actual Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Setopati & Onlinekhabar (Premium Tier)</td><td class="val-npr">60,000</td><td class="cost-zero">0</td></tr>
+                        <tr><td>Routine of Nepal Banda (Social Authority)</td><td class="val-npr">40,000</td><td class="cost-zero">0</td></tr>
+                        <tr><td>Mainstream News (Nagarik, Baahrakhari, Lokaantar)</td><td class="val-npr">80,000</td><td class="cost-zero">0</td></tr>
+                        <tr><td>Tech & Business Portals (Techpana, Bizpati, ICT)</td><td class="val-npr">70,000</td><td class="cost-zero">0</td></tr>
+                        <tr><td>Secondary Portals & Social Distribution</td><td class="val-npr">80,000</td><td class="cost-zero">0</td></tr>
+                        <tr class="total-row">
+                            <td>TOTAL EARNED MEDIA VALUE</td>
+                            <td>NPR 3,30,000</td>
+                            <td class="cost-zero">NPR 0</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="pillar-card" style="border-top-color: var(--dgo-red);">
-                <h4>Editorial PR</h4>
-                <p>Nationwide press release focusing on "Reality over Pranks," securing organic news slots.</p>
+        </section>
+
+        <section>
+            <h2>4. Media Coverage Appendix (Links)</h2>
+            <div class="tabs-grid">
+                <a href="https://www.setopati.com/art/art-activity/385727" class="news-tab" target="_blank">
+                    <span class="icon">📰</span><span class="name">Setopati</span>
+                </a>
+                <a href="https://www.onlinekhabar.com/2026/04/1903516" class="news-tab" target="_blank">
+                    <span class="icon">📰</span><span class="name">Onlinekhabar</span>
+                </a>
+                <a href="https://www.onlinepana.com/content/384488/" class="news-tab" target="_blank">
+                    <span class="icon">💻</span><span class="name">Online Pana</span>
+                </a>
+                <a href="https://nepalkhabar.com/entertainment/270445-2026-4-2-11-36-49" class="news-tab" target="_blank">
+                    <span class="icon">📰</span><span class="name">Nepal Khabar</span>
+                </a>
+                <a href="https://www.arthapath.com/samachar/2026/04/02/203132/" class="news-tab" target="_blank">
+                    <span class="icon">📊</span><span class="name">Artapana</span>
+                </a>
+                <a href="https://www.arthapath.com/samachar/2026/04/02/203132/" class="news-tab" target="_blank">
+                    <span class="icon">📊</span><span class="name">Arthapath</span>
+                </a>
+                <a href="https://arthachautari.com/2026/04/145597/" class="news-tab" target="_blank">
+                    <span class="icon">📰</span><span class="name">Artha Chautari</span>
+                </a>
+                <a href="https://np.ictframe.com/ujwal-thapa-documentary-dgo/" class="news-tab" target="_blank">
+                    <span class="icon">💻</span><span class="name">ICT Frame</span>
+                </a>
+                <a href="https://baahrakhari.com/detail/482973" class="news-tab" target="_blank">
+                    <span class="icon">📰</span><span class="name">Baahrakhari</span>
+                </a>
+                <a href="https://breaknlinks.com/nepali/category/art-1/news/10317" class="news-tab" target="_blank">
+                    <span class="icon">🔗</span><span class="name">Breaknlinks</span>
+                </a>
+                <a href="https://bizpati.com/2026/04/196812/" class="news-tab" target="_blank">
+                    <span class="icon">💰</span><span class="name">Bizpati</span>
+                </a>
+                <a href="https://www.facebook.com/100063660906045/posts/1544439337688082/" class="news-tab" target="_blank">
+                    <span class="icon">📱</span><span class="name">Pana (FB)</span>
+                </a>
+                <a href="https://lokaantar.com/story/316078/2026/4/3/cinema/film-" class="news-tab" target="_blank">
+                    <span class="icon">📰</span><span class="name">Lokaantar</span>
+                </a>
+                <a href="https://techpana.com/2026/155992/documentary-on-ujwal-thapa-released-on-dishhome-ott-dgo" class="news-tab" target="_blank">
+                    <span class="icon">💻</span><span class="name">Techpana</span>
+                </a>
+                <a href="https://nagariknews.nagariknetwork.com/arts/the-mind-blowing-man-can-now-be-watched-worldwide-via-ott-25-90.html" class="news-tab" target="_blank">
+                    <span class="icon">📰</span><span class="name">Nagarik News</span>
+                </a>
+                <a href="https://www.facebook.com/share/p/1775SpvySx/" class="news-tab" target="_blank">
+                    <span class="icon">✨</span><span class="name">RONB Post</span>
+                </a>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <section>
-        <h2>3. Financial Performance & Value Audit</h2>
-        <p>Estimated Earned Media Value (EMV) secured through internal relationship management.</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Category</th>
-                    <th>Description</th>
-                    <th>Market Rate (Est.)</th>
-                    <th>D Go Cost</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Top-Tier Portals</td>
-                    <td>Setopati, Onlinekhabar, Nagarik News</td>
-                    <td>NPR 85,000</td>
-                    <td class="cost-col">NPR 0</td>
-                </tr>
-                <tr>
-                    <td>Social Authority</td>
-                    <td>Routine of Nepal Banda (RONB)</td>
-                    <td>NPR 65,000</td>
-                    <td class="cost-col">NPR 0</td>
-                </tr>
-                <tr>
-                    <td>Mainstream News</td>
-                    <td>5 articles (Baahrakhari, Lokaantar, etc.)</td>
-                    <td>NPR 75,000</td>
-                    <td class="cost-col">NPR 0</td>
-                </tr>
-                <tr>
-                    <td>Tech & Business</td>
-                    <td>7 specialized features (Techpana, Bizpati, etc.)</td>
-                    <td>NPR 55,000</td>
-                    <td class="cost-col">NPR 0</td>
-                </tr>
-                <tr>
-                    <td>Creative Assets</td>
-                    <td>Distribution of 5 BLQ-designed social clips</td>
-                    <td>NPR 20,000</td>
-                    <td class="cost-col">NPR 0</td>
-                </tr>
-                <tr class="total-row">
-                    <td colspan="2">TOTAL ESTIMATED VALUE SECURED</td>
-                    <td>NPR 3,00,000</td>
-                    <td>NPR 0</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <section>
-        <h2>4. Global Diaspora Strategy</h2>
-        <p>To capture the Nepali diaspora market (USA, Australia, Europe, Canada), we implemented:</p>
-        <ul>
-            <li><strong>Credibility Building:</strong> Utilizing the 16 verified news links to prove the documentary's importance.</li>
-            <li><strong>Impact Narrative:</strong> Highlighting that viewership supports the Ujwal Thapa Foundation.</li>
-            <li><strong>Accessibility:</strong> Leveraging the D Go OTT platform for a seamless global experience.</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>5. Media Coverage Appendix (Click Tabs)</h2>
-        <div class="news-grid">
-            <a href="#" class="news-tab">SETOPATI</a>
-            <a href="#" class="news-tab">ONLINE KHABAR</a>
-            <a href="#" class="news-tab">ONLINE PANA</a>
-            <a href="#" class="news-tab">NEPAL KHABAR</a>
-            <a href="#" class="news-tab">ARTAPANA</a>
-            <a href="#" class="news-tab">ARTHAPATH</a>
-            <a href="#" class="news-tab">ARTHA CHAUTARI</a>
-            <a href="#" class="news-tab">ICT FRAME</a>
-            <a href="#" class="news-tab">BAAHRAKHARI</a>
-            <a href="#" class="news-tab">BREAKNLINKS</a>
-            <a href="#" class="news-tab">BIZPATI</a>
-            <a href="#" class="news-tab">PANA (FB)</a>
-            <a href="#" class="news-tab">LOKAANTAR</a>
-            <a href="#" class="news-tab">TECHPANA</a>
-            <a href="#" class="news-tab">NAGARIK NEWS</a>
-            <a href="#" class="news-tab">RONB (Post)</a>
-        </div>
-    </section>
-
-    <footer style="margin-top: 80px; text-align: right; border-top: 1px solid #eee; padding-top: 20px;">
-        <p style="font-size: 12px; color: #999;">CONFIDENTIAL REPORT - D GO OTT PLATFORM &copy; 2026</p>
+    <footer>
+        D GO OTT PLATFORM &copy; 2026 | CONFIDENTIAL PROJECT COMPLETION REPORT
     </footer>
 </div>
 
